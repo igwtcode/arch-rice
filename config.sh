@@ -19,6 +19,7 @@ done
 
 home_items=(
   ".gitconfig"
+  ".vimrc"
 )
 
 for item in "${home_items[@]}"; do
