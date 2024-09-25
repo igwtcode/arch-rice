@@ -30,6 +30,7 @@ link_dotfiles() {
   local dotconfig_items=(
     "alacritty"
     "bat"
+    "dunst"
     "lazygit"
     "nvim"
     "starship"
