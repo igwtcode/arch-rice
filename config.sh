@@ -65,7 +65,7 @@ post_config() {
   fi
 
   bat cache --build
-  ya pack -a yazi-rs/flavors:catppuccin-mocha
+  ya pack -a yazi-rs/flavors:catppuccin-mocha 2>/dev/null
 }
 
 check_directories

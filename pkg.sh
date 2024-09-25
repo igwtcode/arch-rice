@@ -67,8 +67,8 @@ setup_services() {
 }
 
 init_pacman
-# install_pacman_packages
-# init_yay
-# install_yay_packages
-# configure_time
-# setup_services
+install_pacman_packages
+init_yay
+install_yay_packages
+configure_time
+setup_services
