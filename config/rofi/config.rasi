@@ -1,0 +1,8 @@
+@theme "~/.config/rofi/themes/spotlight-dark.rasi"
+
+configuration {
+  run,drun,ssh,window {
+    matching: "fuzzy";
+  }
+}
+

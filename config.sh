@@ -32,6 +32,7 @@ link_dotfiles() {
     "bat"
     "dunst"
     "lazygit"
+    "rofi"
     "nvim"
     "starship"
     "tmux"
@@ -65,6 +66,18 @@ post_config() {
   ya pack -a yazi-rs/flavors:catppuccin-mocha &>/dev/null
 }
 
+# rofi_themes() {
+#   local tmp_dir=$(mktemp -d -q)
+#   cd $tmp_dir
+#   git clone https://github.com/lr-tech/rofi-themes-collection.git
+#   cd rofi-themes-collection
+#   mkdir -p $HOME/.local/share/rofi/themes/
+#   cp -r themes ~/.local/share/rofi/
+#   cd $DIR
+#   rm -rf $tmp_dir 2>/dev/null
+# }
+
 check_directories
 link_dotfiles
+# rofi_themes
 post_config
