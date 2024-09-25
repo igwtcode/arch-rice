@@ -32,6 +32,7 @@ export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin/bin
+export MOZ_ENABLE_WAYLAND=1
 
 # pull all git branches
 git_pull_all_branches() {
