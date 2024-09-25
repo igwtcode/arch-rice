@@ -3,7 +3,7 @@ import = [
 ]
 
 [window]
-padding = { x = 9, y = 9 }
+padding = { x = 6, y = 6 }
 opacity = 0.72
 option_as_alt = "Both"
 
