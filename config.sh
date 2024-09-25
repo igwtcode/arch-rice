@@ -61,8 +61,8 @@ post_config() {
     git clone https://github.com/tmux-plugins/tpm $TPM_DIR
   fi
 
-  bat cache --build
-  ya pack -a yazi-rs/flavors:catppuccin-mocha 2>/dev/null
+  bat cache --build &>/dev/null
+  ya pack -a yazi-rs/flavors:catppuccin-mocha &>/dev/null
 }
 
 check_directories
