@@ -47,6 +47,10 @@ configure_time() {
   sudo hwclock --systohc
 }
 
+set_default_shell() {
+  sudo chsh -s $(which zsh) "$USER"
+}
+
 setup_services() {
   local services=(
     "acpid"
@@ -70,5 +74,6 @@ init_pacman
 install_pacman_packages
 init_yay
 install_yay_packages
+set_default_shell
 configure_time
 setup_services

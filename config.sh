@@ -26,10 +26,6 @@ check_directories() {
 
 }
 
-set_default_shell() {
-  sudo chsh -s $(which zsh) "$USER"
-}
-
 link_dotfiles() {
   local dotconfig_items=(
     "alacritty"
@@ -69,6 +65,5 @@ post_config() {
 }
 
 check_directories
-set_default_shell
 link_dotfiles
 post_config
