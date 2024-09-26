@@ -3,7 +3,7 @@
 killall -e xdg-desktop-portal-wlr
 killall hyprpaper waybar hypridle xdg-desktop-portal
 
-sleep 1
+# sleep 1
 
 # dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 dbus-update-activation-environment --systemd --all
@@ -13,8 +13,12 @@ waybar &
 hypridle &
 
 /usr/lib/xdg-desktop-portal-wlr &
-sleep 3
+sleep 1
 /usr/lib/xdg-desktop-portal &
+
+# sleep 1
+# hyprctl dispatch workspace 1 && alacritty
+# hyprctl dispatch workspace 7 && firefox
 
 # pkill -9 hyprpaper &>/dev/null
 # pkill -9 waybar &>/dev/null
