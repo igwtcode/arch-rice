@@ -27,6 +27,7 @@ return {
         'hcl',
         'hjson',
         'html',
+        'hyprlang',
         'javascript',
         'jsdoc',
         'json',

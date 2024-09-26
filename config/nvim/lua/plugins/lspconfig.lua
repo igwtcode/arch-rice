@@ -185,6 +185,7 @@ return {
         dockerls = {},
         ts_ls = {},
         rust_analyzer = {},
+        hyprls = {},
 
         gopls = {
           settings = {

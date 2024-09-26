@@ -162,8 +162,22 @@ vim.filetype.add {
     ['.*/playbooks/.*.yaml'] = 'yaml.ansible',
     ['.*/roles/.*.yaml'] = 'yaml.ansible',
     ['playbook.yaml'] = 'yaml.ansible',
+    ['.*/hypr/.*%.conf'] = 'hyprlang',
   },
 }
+
+-- Hyprlang LSP
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+  pattern = { '*.hl', 'hypr*.conf' },
+  callback = function(event)
+    -- print(string.format('starting hyprls for %s', vim.inspect(event)))
+    vim.lsp.start {
+      name = 'hyprlang',
+      cmd = { 'hyprls' },
+      root_dir = vim.fn.getcwd(),
+    }
+  end,
+})
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
