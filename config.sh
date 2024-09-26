@@ -31,15 +31,16 @@ link_dotfiles() {
     "alacritty"
     "bat"
     "dunst"
+    "hypr"
+    "kitty"
     "lazygit"
-    "rofi"
     "nvim"
+    "prettier"
+    "rofi"
+    "shellrc"
     "starship"
     "tmux"
-    "prettier"
     "waybar"
-    "shellrc"
-    "hypr"
   )
 
   local home_items=(
