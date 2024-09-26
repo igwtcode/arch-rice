@@ -36,6 +36,7 @@ link_dotfiles() {
     "nvim"
     "starship"
     "tmux"
+    "prettier"
     "shellrc"
     "hypr"
   )
