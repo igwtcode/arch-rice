@@ -24,7 +24,8 @@
 #custom-lock,
 #custom-hypridle,
 #custom-power {
-  background-color: @surface0;
+  /* background-color: @surface0; */
+  background-color: rgba(31, 32, 44, 0.72);
   padding: 0.09rem 0.66rem;
   margin: 3px 3px 0px 3px;
   border-radius: 0.6rem;
