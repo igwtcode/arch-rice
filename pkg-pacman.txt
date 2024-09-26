@@ -103,6 +103,8 @@ python-virtualenv
 python-yaml
 qt5-wayland
 qt6ct
+qt6-declarative
+qt6-svg
 qt6-wayland
 ranger
 reflector
