@@ -37,6 +37,7 @@ link_dotfiles() {
     "starship"
     "tmux"
     "prettier"
+    "waybar"
     "shellrc"
     "hypr"
   )
