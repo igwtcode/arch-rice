@@ -1,6 +1,7 @@
 aws-cli-v2
 aws-sam-cli
 aylurs-gtk-shell
+visual-studio-code-bin
 bun-bin
 grimblast
 #hyprshade

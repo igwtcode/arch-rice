@@ -31,6 +31,8 @@ link_dotfiles() {
     "alacritty"
     "bat"
     "btop"
+    "code-flags.conf"
+    "Code"
     "dunst"
     "hypr"
     "kitty"
