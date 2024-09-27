@@ -9,4 +9,4 @@ grimblast
 nvm
 smile
 #waypaper
-wlogout
+#wlogout
