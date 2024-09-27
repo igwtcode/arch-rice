@@ -1,35 +1,24 @@
 #!/usr/bin/env bash
 
-killall -e xdg-desktop-portal-wlr
-killall hyprpaper waybar hypridle xdg-desktop-portal
+# Kill existing instances of required services
+pkill -x xdg-desktop-portal-wlr
+pkill -x hyprpaper
+pkill -x waybar
+pkill -x hypridle
+pkill -x xdg-desktop-portal
 
-# sleep 1
-
-# dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+# Update environment variables for dbus
 dbus-update-activation-environment --systemd --all
 
+# Start necessary services
 hyprpaper &
 waybar &
 hypridle &
 
+# Start the polkit agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Start xdg-desktop-portal services with a slight delay
 /usr/lib/xdg-desktop-portal-wlr &
 sleep 1
 /usr/lib/xdg-desktop-portal &
-
-# sleep 1
-# hyprctl dispatch workspace 1 && alacritty
-# hyprctl dispatch workspace 7 && firefox
-
-# pkill -9 hyprpaper &>/dev/null
-# pkill -9 waybar &>/dev/null
-# pkill -9 hypridle &>/dev/null
-
-# pkill -9 nm-applet
-# nm-applet &
-
-# sleep 1
-# killall -e xdg-desktop-portal-hyprland
-# killall xdg-desktop-portal
-# /usr/lib/xdg-desktop-portal-hyprland &
-# sleep 2
-# /usr/lib/xdg-desktop-portal &
