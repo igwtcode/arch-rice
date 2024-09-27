@@ -30,6 +30,7 @@ link_dotfiles() {
   local dotconfig_items=(
     "alacritty"
     "bat"
+    "btop"
     "dunst"
     "hypr"
     "kitty"
