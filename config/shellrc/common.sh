@@ -24,7 +24,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # to fix issue with getting intel graphics data
-alias btop=' sudo btop'
+# alias btop=' sudo btop'
 
 export EDITOR=nvim
 export VISUAL=nvim
