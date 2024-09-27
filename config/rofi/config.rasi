@@ -2,7 +2,7 @@ configuration {
   display-drun: "Applications:";
   display-window: "Windows:";
   //drun-display-format: "{icon} {name} - {generic}"; // Include description for drun
-  font: "MesloLGS Nerd Font Medium 15";
+  font: "MesloLGS Nerd Font Medium 14";
   modi: "window,run,drun";
 
   // Set icon theme
@@ -31,9 +31,9 @@ configuration {
 }
 
 window {
-  width: 30%;
+  width: 33%;
   background-color: @bg;
-  border-radius: 10px;
+  border-radius: 9px;
 }
 
 element {

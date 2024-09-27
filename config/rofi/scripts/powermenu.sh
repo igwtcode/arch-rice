@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+SUDO_ASKPASS=~/.config/rofi/scripts/askpass.sh
+
 # Define the power options
 options="Lock\nSuspend\nHibernate\nReboot\nShutdown\nLogout"
 
@@ -12,16 +14,16 @@ Lock)
   hyprlock
   ;;
 Suspend)
-  sudo systemctl suspend
+  sudo -A systemctl suspend
   ;;
 Hibernate)
-  sudo systemctl hibernate
+  sudo -A systemctl hibernate
   ;;
 Reboot)
-  sudo systemctl reboot
+  sudo -A systemctl reboot
   ;;
 Shutdown)
-  sudo systemctl poweroff
+  sudo -A systemctl poweroff
   ;;
 Logout)
   hyprctl dispatch exit
