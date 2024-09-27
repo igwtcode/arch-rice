@@ -34,10 +34,10 @@ set smartcase
 set signcolumn=yes
 
 " Reduce time for Vim to trigger an update for swap and completion (in milliseconds)
-set updatetime=250
+set updatetime=300
 
 " Set the time to wait for a mapped key sequence to complete (in milliseconds)
-set timeoutlen=300
+set timeoutlen=360
 
 " Force horizontal splits to go below the current window
 set splitbelow
