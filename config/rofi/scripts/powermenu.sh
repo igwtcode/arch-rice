@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-SUDO_ASKPASS=~/.config/rofi/scripts/askpass.sh
+# export SUDO_ASKPASS=~/.config/rofi/scripts/ask-sudo-pass.sh
 
 # Define the power options
 options="Lock\nSuspend\nHibernate\nReboot\nShutdown\nLogout"
 
 # Show the power menu using rofi
-selected_option=$(echo -e "$options" | rofi -dmenu -p "Power Menu:")
+selected_option=$(echo -e "$options" | rofi -dmenu -i -matching "fuzzy" -p "Power Menu:")
 
 # Perform the selected action
 case $selected_option in
