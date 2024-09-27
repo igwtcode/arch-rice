@@ -32,7 +32,8 @@ wait_for_app() {
 # Wait for Hyprland to be fully loaded
 sleep 1
 
-kitty_tmux="kitty zsh -c 'tmux attach || ([ -f ~/.local/share/tmux/resurrect/last ] && tmux source-file ~/.local/share/tmux/resurrect/last || tmux new)'"
+# kitty_tmux="kitty zsh -c 'tmux attach || ([ -f ~/.local/share/tmux/resurrect/last ] && tmux source-file ~/.local/share/tmux/resurrect/last || tmux new)'"
+kitty_tmux="kitty zsh -c '$(tmux attach || tmux)'"
 chatgpt="firefox -P default -no-remote https://chatgpt.com"
 google="firefox -P test-profile -no-remote https://google.com"
 msteams="firefox -P default -no-remote https://teams.microsoft.com"
