@@ -140,8 +140,6 @@ set guicursor=a:hor100-blinkon1
 " Define which keys can move across lines in Normal and Insert modes
 " set whichwrap+=<,>,[,],h,l
 
-
 set wildmenu
-
-" set colorscheme gruvbox
-colorscheme habamax
+syntax on
+colorscheme catppuccin_mocha

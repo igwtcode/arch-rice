@@ -48,6 +48,7 @@ link_dotfiles() {
     ".gitconfig"
     ".bashrc"
     ".zshrc"
+    ".vim"
     ".vimrc"
   )
 
