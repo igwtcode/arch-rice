@@ -30,6 +30,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 complete -C "$(which aws_completer)" aws
 
+source ~/.config/shellrc/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
