@@ -16,7 +16,7 @@
     "custom/power"
   ],
   "custom/rofilauncher": {
-    "format": "  ",
+    "format": " ",
     "on-click": "rofi -show drun",
     "tooltip-format": "Open Application Launcher"
   },
@@ -103,7 +103,7 @@
   },
   "bluetooth": {
     "format": " {status}",
-    "format-disabled": "",
+    "format-disabled": "  ",
     "format-off": "",
     "interval": 30,
     "on-click": "blueman-manager",
@@ -111,7 +111,7 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "{icon}",
+    "format": " {icon} ",
     "tooltip": false,
     // "format": "{icon} {percent}%",
     "scroll-step": 5,
@@ -120,11 +120,11 @@
   "clock": {
     "timezone": "Europe/Berlin",
     "tooltip-format": "<big>{:%d %Y %B}</big>\n<tt>{calendar}</tt>",
-    "format-alt": " {:%Y-%m-%d}",
+    "format-alt": " {:%Y-%m-%d %H:%M}",
     "format": " {:%H:%M}"
   },
   "custom/hypridle": {
-    "format": " ",
+    "format": "  ",
     "return-type": "json",
     "escape": true,
     "exec-on-event": true,
