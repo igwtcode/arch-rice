@@ -125,6 +125,7 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldlevel = 99
 vim.opt.foldmethod = 'expr'
 
+vim.opt.modeline = true
 vim.opt.guicursor = 'a:hor100-blinkon1'
 
 -- vim: ts=2 sts=2 sw=2 et

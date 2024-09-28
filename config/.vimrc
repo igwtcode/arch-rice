@@ -141,5 +141,7 @@ set guicursor=a:hor100-blinkon1
 " set whichwrap+=<,>,[,],h,l
 
 set wildmenu
+set modeline
+
 syntax on
 colorscheme catppuccin_mocha
