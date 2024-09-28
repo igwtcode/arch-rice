@@ -28,10 +28,10 @@
     height = 540
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = bottom-right
 
     # Offset from the origin
-    offset = 15x15
+    offset = 15x30
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -80,17 +80,17 @@
     separator_height = 0
 
     # Padding between text and separator.
-    padding = 6
+    padding = 9
 
     # Horizontal padding.
-    horizontal_padding = 6
+    horizontal_padding = 9
 
     # Padding between text and icon.
-    text_icon_padding = 0
+    text_icon_padding = 9
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 0
+    frame_width = 1
 
     # Defines color of the frame around the notification window.
     frame_color = "#89b4fa"
@@ -249,7 +249,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 9
+    corner_radius = 6
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
