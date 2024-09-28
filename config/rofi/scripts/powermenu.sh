@@ -14,6 +14,9 @@ Lock)
   hyprlock
   ;;
 Suspend)
+  # this uses gnome polkit agent to ask password
+  # in this case no need for script in SUDO_ASKPASS
+  # pkexec systemctl poweroff
   sudo -A systemctl suspend
   ;;
 Hibernate)
