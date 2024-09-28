@@ -42,6 +42,8 @@ export FZF_DEFAULT_OPTS=" \
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin/bin:$HOME/bin
+export SUDO_ASKPASS=$HOME/bin/s-sudo-askpass
+export MOZ_ENABLE_WAYLAND=1
 
 # pull all git branches
 git_pull_all_branches() {
