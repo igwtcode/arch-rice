@@ -41,19 +41,19 @@
 
 #workspaces button {
   color: @lavender;
-  border-radius: 1rem;
+  border-radius: 0.6rem;
   padding: 0.3rem 0.2rem;
 }
 
 #workspaces button.active {
   color: @peach;
   font-weight: 900;
-  border-radius: 1rem;
+  border-radius: 0.6rem;
 }
 
 #workspaces button:hover {
   color: @sapphire;
-  border-radius: 1rem;
+  border-radius: 0.6rem;
 }
 
 #bluetooth.on {
