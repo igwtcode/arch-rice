@@ -61,6 +61,8 @@ link_dotfiles() {
   for item in "${home_items[@]}"; do
     ln -sfn $CONF_DIR/$item $HOME/$item
   done
+
+  ln -sfn $DIR/bin $HOME/bin
 }
 
 post_config() {

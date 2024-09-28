@@ -2,8 +2,10 @@
   "layer": "top",
   "position": "top", // Waybar position (top|bottom|left|right)
   "modules-left": ["custom/rofilauncher", "hyprland/workspaces"],
+  "reload_style_on_change": true,
   // "modules-center": [],
   "modules-right": [
+    "temperature",
     "cpu",
     "memory",
     "network",
@@ -30,20 +32,24 @@
     "format": " {name} {icon} ",
     "format-icons": {
       "1": "",
-      "2": "",
-      "3": "󱋊",
-      "4": "",
-      "5": "",
-      "7": "󰊻",
+      "2": "",
+      // "3": "󱋊",
+      // "7": "󰊻",
       "default": ""
       // "active": "",
-      // "default": "",
+      // "default": ""
     },
     "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-      // "DP-1": [1, 2, 3, 4, 5, 6],
-      // "eDP-1": [7, 8, 9, 10]
+      // "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      "DP-1": [1, 2, 3, 4, 5, 6],
+      "eDP-1": [7, 8, 9, 10]
     }
+  },
+  "temperature": {
+    "interval": 6,
+    "critical-threshold": 70,
+    "format-critical": " {temperatureC}°C",
+    "format": " {temperatureC}°C"
   },
   "cpu": {
     "interval": 6,
@@ -75,7 +81,7 @@
       "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-charging": "  {capacity}%",
+    "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
@@ -123,19 +129,9 @@
     "format-alt": " {:%Y-%m-%d %H:%M}",
     "format": " {:%H:%M}"
   },
-  "custom/hypridle": {
-    "format": "  ",
-    "return-type": "json",
-    "escape": true,
-    "exec-on-event": true,
-    "interval": 60,
-    "exec": "~/.config/hypr/scripts/hypridle.sh status",
-    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle",
-    "on-click-right": "hyprlock"
-  },
   "custom/power": {
     "tooltip-format": "Power",
-    "on-click": "~/.config/rofi/scripts/powermenu.sh",
+    "on-click": "~/bin/s-powermenu",
     "format": " "
   }
 }

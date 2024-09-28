@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
+# vim: set filetype=bash:
 
-# export SUDO_ASKPASS=~/.config/rofi/scripts/ask-sudo-pass.sh
-
-# Define the power options
 options="Lock\nSuspend\nHibernate\nReboot\nShutdown\nLogout"
 
-# Show the power menu using rofi
-selected_option=$(echo -e "$options" | rofi -dmenu -i -matching "fuzzy" -p "Power Menu:")
+selected_option=$(echo -e "$options" | rofi -dmenu -i -p "Power Menu:" \
+  -theme-str "window {width: 300px;} listview {lines: 6;}")
 
-# Perform the selected action
 case $selected_option in
 Lock)
   hyprlock

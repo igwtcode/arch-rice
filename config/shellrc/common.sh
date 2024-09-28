@@ -41,8 +41,7 @@ export FZF_DEFAULT_OPTS=" \
 --multi"
 
 export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin/bin
-export MOZ_ENABLE_WAYLAND=1
+export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin/bin:$HOME/bin
 
 # pull all git branches
 git_pull_all_branches() {

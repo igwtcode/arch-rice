@@ -17,6 +17,7 @@
 #backlight,
 #network,
 #memory,
+#temperature,
 #cpu,
 #bluetooth,
 #clock,
@@ -33,6 +34,14 @@
 
 #cpu {
   color: @sky;
+}
+
+#temperature {
+  color: @mauve;
+}
+
+#temperature.critical {
+  color: @red;
 }
 
 #memory {
