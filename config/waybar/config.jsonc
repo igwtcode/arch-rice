@@ -1,7 +1,10 @@
 {
   "layer": "top",
   "position": "top", // Waybar position (top|bottom|left|right)
-  "modules-left": ["custom/rofilauncher", "hyprland/workspaces"],
+  "modules-left": [
+    // "custom/rofilauncher",
+    "hyprland/workspaces"
+  ],
   "reload_style_on_change": true,
   // "modules-center": [],
   "modules-right": [
@@ -12,10 +15,9 @@
     "battery",
     "pulseaudio",
     "bluetooth",
-    "backlight",
-    "clock",
-    "custom/hypridle",
-    "custom/power"
+    // "backlight",
+    "clock"
+    // "custom/power"
   ],
   "custom/rofilauncher": {
     "format": " ",

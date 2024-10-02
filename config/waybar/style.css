@@ -1,7 +1,8 @@
+/* vim: ft=sass */
 @import "mocha.css";
 
 * {
-  font-family: MesloLGM Nerd Font;
+  font-family: JetBrainsMono Nerd Font;
   font-size: 14px;
   min-height: 0;
 }
@@ -27,9 +28,9 @@
 #custom-power {
   /* background-color: @surface0; */
   background-color: rgba(31, 32, 44, 0.72);
-  padding: 0.09rem 0.66rem;
+  padding: 0 9px;
   margin: 3px 3px 0px 3px;
-  border-radius: 0.6rem;
+  border-radius: 6px;
 }
 
 #cpu {
@@ -50,27 +51,29 @@
 
 #workspaces button {
   color: @lavender;
-  border-radius: 0.6rem;
+  border-radius: 6px;
   padding: 0.3rem 0.2rem;
 }
 
 #workspaces button.active {
   color: @peach;
   font-weight: 900;
-  border-radius: 0.6rem;
+  border-radius: 6px;
 }
 
 #workspaces button:hover {
   color: @sapphire;
-  border-radius: 0.6rem;
+  border-radius: 6px;
 }
 
 #bluetooth.on {
   color: @blue;
 }
+
 #bluetooth.off {
   color: @surface0;
 }
+
 #bluetooth.connected {
   color: @green;
 }
@@ -78,6 +81,7 @@
 #network.wifi {
   color: @blue;
 }
+
 #network.disconnected {
   color: @subtext0;
 }
@@ -89,12 +93,15 @@
 #battery {
   color: @green;
 }
+
 #battery.charging {
   color: @teal;
 }
+
 #battery.warning:not(.charging) {
   color: @yellow;
 }
+
 #battery.critical:not(.charging) {
   color: @red;
 }
