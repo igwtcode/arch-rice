@@ -186,6 +186,10 @@ return {
         ts_ls = {},
         rust_analyzer = {},
         hyprls = {},
+        cssls = {},
+        stylelint = {
+          filetypes = { 'sass' },
+        },
 
         gopls = {
           settings = {
