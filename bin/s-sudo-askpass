@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# vim: set filetype=bash:
-
-rofi -dmenu \
-  -password \
-  -i \
-  -no-fixed-num-lines \
-  -p "sudo:" \
-  -theme-str "window {width: 330px;}"

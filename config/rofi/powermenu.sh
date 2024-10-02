@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# vim: set filetype=bash:
+# vim: ft=bash
 
-options="Lock\nSuspend\nHibernate\nReboot\nShutdown\nLogout"
+conf=~/.config/rofi/powermenu.rasi
+options="  Lock\n󰤄  Suspend\n󰒲  Hibernate\n󰜉  Reboot\n  Shutdown\n󰗽  Logout"
 
-selected_option=$(echo -e "$options" | rofi -dmenu -i -p "Power Menu:" \
-  -theme-str "window {width: 300px;} listview {lines: 6;}")
+selected_option=$(echo -e "$options" | rofi -dmenu -i -config $conf)
+selected_option=$(echo $selected_option | cut -d " " -f 2)
 
 case $selected_option in
 Lock)
@@ -26,6 +27,7 @@ Shutdown)
   sudo -A systemctl poweroff
   ;;
 Logout)
+  # TODO: Check this
   hyprctl dispatch exit
   ;;
 *)

@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# vim: set filetype=bash:
-
-theme_str="window {width: 1234px;} listview {lines: 18;}"
-cliphist list | rofi -dmenu -monitor eDP-1 -p "Cliphist:" -display-columns 2 -theme-str "${theme_str}" | cliphist decode | wl-copy

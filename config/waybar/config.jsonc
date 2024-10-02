@@ -133,7 +133,7 @@
   },
   "custom/power": {
     "tooltip-format": "Power",
-    "on-click": "~/bin/s-powermenu",
+    "on-click": "~/.config/rofi/powermenu.sh",
     "format": " "
   }
 }

@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# vim: set filetype=bash:
+# vim: ft=bash
 
 PROFILES_DIR="$HOME/.mozilla/firefox"
 PROFILE_PREFIX="csm-pfe-pfx."
+NT_TITLE="FireFox Profiles"
 
 # Function to prepend the prefix to the profile name if not already present
 prepend_prefix() {
@@ -28,11 +29,9 @@ list_profiles() {
   # Calculate the number of items
   local num_profiles=${#profiles[@]}
 
-  # Construct the theme string
-  local theme_str="window {width: 450px;} listview {lines: ${num_profiles};}"
-
+  local conf=~/.config/rofi/firefox-profiles.rasi
   # Display profiles using rofi with custom width and dynamic height
-  printf "%s\n" "${profiles[@]}" | rofi -dmenu -i -p "Firefox Profile:" -theme-str "${theme_str}"
+  printf "%s\n" "${profiles[@]}" | rofi -dmenu -i -l $num_profiles -config $conf
 }
 
 # Function to create a new profile directory
@@ -42,9 +41,9 @@ create_profile() {
   local profile_path="$PROFILES_DIR/$profile_name"
 
   if mkdir -p "$profile_path"; then
-    notify-send -u normal "Firefox Profile Manager" "Profile '$1' created at $profile_path."
+    notify-send -u normal $NT_TITLE "Profile '$1' created at $profile_path."
   else
-    notify-send -u critical "Firefox Profile Manager" "Failed to create profile '$1' at $profile_path."
+    notify-send -u critical $NT_TITLE "Failed to create profile '$1' at $profile_path."
     exit 1
   fi
 }
@@ -60,14 +59,13 @@ open_profile() {
     firefox -profile "$profile_dir"
   else
     # Ask for confirmation using rofi
-    local confirmation
-    local theme_str="window {width: 520px;} listview {lines: 2;}"
-    confirmation=$(echo -e "No\nYes" | rofi -dmenu -i -mesg "Profile '$1' not found!" -p "Create Firefox Profile '$1'?" -theme-str "${theme_str}")
+    local conf=~/.config/rofi/confirmation.rasi
+    local confirmation=$(echo -e "No\nYes" | rofi -dmenu -i -mesg "Profile '$1' not found! Create it?" -config $conf)
     if [[ "$confirmation" == "Yes" ]]; then
       create_profile "$1"
       firefox -no-remote -profile "$profile_dir"
     else
-      notify-send -u normal "Firefox Profile Manager" "Profile creation for '$1' was canceled."
+      notify-send -u normal $NT_TITLE "Profile creation for '$1' was canceled."
       exit 1
     fi
   fi
@@ -80,6 +78,6 @@ if [[ "$#" -eq 0 ]]; then
 elif [[ "$#" -eq 1 ]]; then
   open_profile "$1"
 else
-  notify-send -u critical "Firefox Profile Manager" "Invalid usage. Provide zero or one argument."
+  notify-send -u critical $NT_TITLE "Invalid usage. Provide zero or one argument."
   exit 1
 fi

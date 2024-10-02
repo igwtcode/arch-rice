@@ -1,23 +1,12 @@
 /* vim: ft=sass */
 
-configuration {
-  display-drun: "Applications:";
-  display-window: "Windows:";
-  //drun-display-format: "{icon} {name} - {generic}"; // Include description for drun
-  font: "MesloLGS Nerd Font Medium 14";
-  // modi: "run,drun,ssh,window";
-
-  // Set icon theme
-  // icon-theme: "Papirus-Dark";
-  // show-icons: true;
-
-  // run,drun,ssh,window {
-  //   matching: "fuzzy";
-  //   case-sensitive: false;
-  // }
-}
-
 @theme "/dev/null"
+
+configuration {
+  // font: "MesloLGS Nerd Font Medium 14";
+  font: "JetBrainsMono Nerd Font Medium 14";
+  terminal: "kitty";
+}
 
 * {
   bg: #1e1e2e30;
@@ -40,7 +29,7 @@ configuration {
 window {
   width: 33%;
   background-color: @bg;
-  border-radius: 3px;
+  border-radius: 6px;
   border: 1px;
   border-color: @bd-c;
   transparency: "real";
@@ -49,7 +38,7 @@ window {
 element {
   padding: 9 12;
   background-color: transparent;
-  text-color: @fg-alt;
+  text-color: @fg;
 }
 
 message {
@@ -83,13 +72,17 @@ element-icon {
 }
 
 entry {
+  font: "JetBrainsMono Nerd Font Medium 16";
   padding: 12;
   background-color: @bg-alt;
-  text-color: @fg;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+  text-color: @fg-alt;
 }
 
 inputbar {
-  children: [prompt, entry];
+  children: [entry];
+  // children: [prompt, entry];
   background-color: @bg;
 }
 
@@ -111,5 +104,4 @@ prompt {
   background-color: @bg-alt;
   text-color: @fg;
 }
-
 
