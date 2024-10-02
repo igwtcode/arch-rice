@@ -77,3 +77,6 @@ install_yay_packages
 set_default_shell
 configure_time
 setup_services
+
+# fix btop intel graphics issue
+sudo setcap cap_perfmon=+ep $(which btop)
