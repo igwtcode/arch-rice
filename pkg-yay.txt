@@ -1,13 +1,6 @@
 aws-cli-v2
 aws-sam-cli
-aylurs-gtk-shell
-visual-studio-code-bin
-bun-bin
 grimblast
-#hyprshade
-#k3s
-#mission-center
 nvm
 smile
-#waypaper
-#wlogout
+visual-studio-code-bin
