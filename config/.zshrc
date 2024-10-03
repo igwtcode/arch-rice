@@ -9,7 +9,7 @@ setopt HIST_SAVE_NO_DUPS
 
 setopt prompt_subst
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-autoload bashcompinit && bashcompinit
+autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit
 compinit
 
@@ -29,6 +29,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 complete -C "$(which aws_completer)" aws
+complete -o nospace -C "$(which terraform)" terraform
 
 source ~/.config/shellrc/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
