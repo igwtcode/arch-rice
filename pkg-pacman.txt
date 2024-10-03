@@ -30,7 +30,7 @@ eza
 fastfetch
 fd
 ffmpegthumbnailer
-figlet
+#figlet
 firefox
 firewalld
 flatpak
@@ -94,6 +94,7 @@ pipewire-jack
 pipewire-pulse
 polkit-gnome
 poppler
+postgresql-libs
 python
 python-boto3
 python-gobject

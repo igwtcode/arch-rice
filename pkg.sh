@@ -56,6 +56,7 @@ setup_services() {
     "acpid"
     "avahi-daemon"
     "bluetooth"
+    "docker"
     "cups.service"
     "firewalld"
     "fstrim.timer"
