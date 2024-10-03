@@ -24,15 +24,16 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ch="cliphist list | fzf --no-sort -d $'\t' --with-nth 2 | cliphist decode | wl-copy"
 
-# to fix issue with getting intel graphics data
-# alias btop=' sudo btop'
-
 export EDITOR=nvim
 export VISUAL=nvim
+export MOZ_ENABLE_WAYLAND=1
 
 export LG_CONFIG_FILE=$HOME/.config/lazygit/config.yaml
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+export GOPATH=$HOME/go
+export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin/bin:$HOME/bin
+export SUDO_ASKPASS=$HOME/.config/rofi/askpass.sh
 
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -40,30 +41,3 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --color=selected-bg:#45475a \
 --multi"
-
-export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin/bin:$HOME/bin
-export SUDO_ASKPASS=$HOME/.config/rofi/askpass.sh
-export MOZ_ENABLE_WAYLAND=1
-
-# pull all git branches
-git_pull_all_branches() {
-  local current_branch=$(git branch --show-current)
-  git fetch origin
-
-  # Get a list of all remote branches (stripped of the 'origin/' prefix)
-  for branch in $(git branch -r | grep -v '\->' | sed 's/origin\///'); do
-    if ! git show-ref --verify --quiet refs/heads/$branch; then
-      git branch --track "$branch" "origin/$branch"
-    fi
-    echo
-    git checkout $branch && git pull origin $branch
-  done
-
-  git switch $current_branch
-}
-
-# pull all repos with a name filter in directory
-pull_tracking() {
-  for x in $(ls -1 | grep -i '.modul.tracking'); do echo -e "\n---------\n==> $x\n" && cd $x && git_pull_all_branches && cd ..; done
-}

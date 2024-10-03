@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# vim: ft=bash
+
+current_branch=$(git branch --show-current)
+
+# Define a trap to always switch back to the original branch on script exit
+trap 'git switch "$current_branch"' EXIT
+
+git fetch origin
+
+# Get a list of all remote branches (stripped of the 'origin/' prefix)
+for branch in $(git branch -r | grep -v '\->' | sed 's/origin\///'); do
+    if ! git show-ref --verify --quiet refs/heads/$branch; then
+        git branch --track "$branch" "origin/$branch"
+    fi
+    echo
+    if ! git checkout "$branch" || ! git pull origin "$branch"; then
+        echo "Failed to checkout or pull branch: $branch"
+        exit 1 # Optionally exit if a command fails
+    fi
+done

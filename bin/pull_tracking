@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# vim: ft=bash
+
+# Save the current directory
+start_dir=$(pwd)
+
+# Define a trap to always return to the original directory on script exit
+trap 'cd "$start_dir"' EXIT
+
+# Iterate over directories matching the filter
+for x in $(ls -1 | grep -i '.modul.tracking'); do
+    echo -e "\n---------\n==> $x\n"
+
+    if cd "$x"; then
+        # Run the git_pull_all_branches script
+        git_pull_all_branches
+
+        # Return to the original directory
+        cd "$start_dir"
+    else
+        echo "Failed to change directory to $x"
+        exit 1 # Optionally exit if a command fails
+    fi
+done
