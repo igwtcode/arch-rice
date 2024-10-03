@@ -295,6 +295,7 @@ return {
         'gofumpt',
         'prettier',
         'shfmt',
+        'beautysh',
         'stylua', -- Used to format Lua code
       })
 

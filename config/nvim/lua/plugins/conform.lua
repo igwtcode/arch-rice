@@ -39,6 +39,9 @@ return {
           shfmt = {
             prepend_args = { '-i', '2' },
           },
+          beautysh = {
+            prepend_args = { '-i', '2', '--force-function-style', 'paronly', '$FILENAME' },
+          },
           prettier = {
             stdin = true,
             args = {
@@ -57,7 +60,9 @@ return {
           terraform = { 'terraform_fmt' },
           tf = { 'terraform_fmt' },
           ['terraform-vars'] = { 'terraform_fmt' },
-          sh = { 'shfmt' },
+          sh = { 'beautysh', 'shfmt' },
+          bash = { 'beautysh', 'shfmt' },
+          zsh = { 'beautysh' },
           yaml = { 'prettier' },
           ['yaml.cfn'] = { 'prettier' },
           ['yaml.sam'] = { 'prettier' },
