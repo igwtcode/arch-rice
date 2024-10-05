@@ -1,3 +1,5 @@
+1password
+1password-cli
 aws-cli-v2
 aws-sam-cli
 grimblast

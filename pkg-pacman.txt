@@ -31,6 +31,7 @@ fd
 firefox
 firewalld
 flatpak
+freerdp
 fuse2
 fzf
 gcc
@@ -38,7 +39,6 @@ git
 git-delta
 github-cli
 gnome-calculator
-gnome-connections
 go
 grim
 gtk4
@@ -112,6 +112,7 @@ tar
 telegram-desktop
 terminus-font
 terraform
+thunderbird
 tldr
 tokei
 ttf-cascadia-code-nerd
