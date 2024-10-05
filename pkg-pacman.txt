@@ -102,6 +102,7 @@ qt6-wayland
 ripgrep
 rofi-wayland
 rsync
+rust
 sed
 slurp
 sof-firmware

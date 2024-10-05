@@ -177,19 +177,23 @@ return {
           },
         },
 
-        pyright = {},
-        marksman = {},
-        terraformls = {},
         ansiblels = {},
         bashls = {},
-        dockerls = {},
-        ts_ls = {},
-        rust_analyzer = {},
-        hyprls = {},
         cssls = {},
-        stylelint = {
-          filetypes = { 'sass' },
-        },
+        docker_compose_language_service = {},
+        dockerls = {},
+        html = {},
+        htmx = {},
+        hyprls = {},
+        marksman = {},
+        pyright = {},
+        rust_analyzer = {},
+        stylelint = { filetypes = { 'sass' } },
+        tailwindcss = {},
+        taplo = {},
+        templ = {},
+        terraformls = {},
+        ts_ls = {},
 
         gopls = {
           settings = {
