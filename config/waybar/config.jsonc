@@ -8,7 +8,7 @@
   "reload_style_on_change": true,
   // "modules-center": [],
   "modules-right": [
-    "temperature",
+    // "temperature",
     "cpu",
     "memory",
     "network",
