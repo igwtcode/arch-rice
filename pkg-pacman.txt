@@ -99,6 +99,7 @@ qt6ct
 qt6-declarative
 qt6-svg
 qt6-wayland
+redis
 ripgrep
 rofi-wayland
 rsync
