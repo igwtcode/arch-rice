@@ -44,7 +44,7 @@ return {
         local messages = vim.fn.execute 'messages'
         local lines = vim.split(messages, '\n')
         pickers
-          .new({}, {
+          .new({ initial_mode = 'normal' }, {
             prompt_title = 'Messages',
             finder = finders.new_table {
               results = lines,
@@ -70,15 +70,17 @@ return {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        defaults = {
-          layout_strategy = 'horizontal',
-          -- layout_config = { prompt_position = "top" },
-          -- sorting_strategy = "ascending",
-          winblend = 0,
+        defaults = vim.tbl_extend('force', require('telescope.themes').get_ivy(), {
+          layout_config = {
+            height = 0.66,
+          },
           preview = {
             filesize_limit = 3, -- MB
           },
           mappings = {
+            n = {
+              ['dd'] = actions.delete_buffer,
+            },
             i = {
               ['<C-k>'] = actions.move_selection_previous, -- move to prev result
               ['<C-j>'] = actions.move_selection_next, -- move to next result
@@ -106,7 +108,7 @@ return {
             '--glob=!**/yarn.lock',
             '--glob=!**/package-lock.json',
           },
-        },
+        }),
         pickers = {
           find_files = {
             hidden = true,
@@ -132,26 +134,8 @@ return {
             sort_lastused = true,
             ignore_current_buffer = false,
             show_all_buffers = true,
-          },
-          lsp_code_actions = {
-            theme = 'dropdown',
-          },
-          lsp_references = {
-            -- theme = "cursor",
-            theme = 'dropdown',
-            layout_strategy = 'horizontal',
-            layout_config = {
-              width = 0.9,
-              height = 0.8,
-              prompt_position = 'top',
-              -- preview_cutoff = 120,
-              horizontal = {
-                preview_width = 0.66,
-              },
-              vertical = {
-                preview_height = 0.6,
-              },
-            },
+            initial_mode = 'normal',
+            sort_mru = true,
           },
         },
         extensions = {
@@ -186,7 +170,8 @@ return {
       vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
       vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
       vim.keymap.set('n', '<leader>fm', View_messages, { desc = '[F]ind [R]esume' })
-      vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = 'Find todos' })
+      vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope initial_mode=normal<cr>', { desc = 'Find todos' })
+      vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
       -- vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
 
       -- vim.keymap.set('n', '<leader>ld', vim.diagnostic.setqflist, { desc = 'Quickfix List Diagnostics' })
@@ -203,13 +188,13 @@ return {
       -- vim.keymap.set('n', '<leader>xt', '<cmd>TodoTrouble<CR>', { desc = 'Open todos in trouble' })
 
       -- Slightly advanced example of overriding default behavior and theme
-      vim.keymap.set('n', '<leader>/', function()
-        -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 0,
-          previewer = false,
-        })
-      end, { desc = '[/] Fuzzily search in current buffer' })
+      -- vim.keymap.set('n', '<leader>/', function()
+      --   -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+      --   builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+      --     winblend = 0,
+      --     previewer = false,
+      --   })
+      -- end, { desc = '[/] Fuzzily search in current buffer' })
 
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
