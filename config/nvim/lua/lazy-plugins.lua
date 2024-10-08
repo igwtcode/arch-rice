@@ -29,6 +29,11 @@ require('lazy').setup({
     end,
   },
   {
+    'rest-nvim/rest.nvim',
+    event = { 'VeryLazy' },
+    cmd = { 'Rest' },
+  },
+  {
     'kdheepak/lazygit.nvim',
     event = { 'VeryLazy' },
     dependencies = { 'nvim-lua/plenary.nvim' },

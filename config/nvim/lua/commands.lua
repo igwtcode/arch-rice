@@ -1,3 +1,5 @@
+-- vim: ts=2 sts=2 sw=2 et
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -357,4 +359,9 @@ vim.api.nvim_create_user_command('RotateWindows', function()
   end
 end, {})
 
--- vim: ts=2 sts=2 sw=2 et
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'http',
+  callback = function()
+    vim.api.nvim_buf_set_keymap(0, 'n', '<leader>r', '<cmd>Rest run<CR>', { noremap = true, silent = true })
+  end,
+})
