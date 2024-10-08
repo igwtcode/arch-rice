@@ -2,6 +2,7 @@
 # vim: ft=zsh ts=2 sts=2 sw=2 et
 
 setopt HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_DUPS HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_FIND_NO_DUPS HIST_SAVE_NO_DUPS
+setopt APPEND_HISTORY INC_APPEND_HISTORY SHARE_HISTORY
 setopt prompt_subst AUTO_CD
 zstyle ':completion:*' matcher-list 'r:[[:ascii:]]||[[:ascii:]]=** r:|=* m:{a-z\-}={A-Z\_}'
 autoload -U +X bashcompinit && bashcompinit
