@@ -128,6 +128,9 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+      local mason_registry = require 'mason-registry'
+      local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -177,13 +180,15 @@ return {
           },
         },
 
+        -- templ = {},
+        -- htmx = {},
         ansiblels = {},
         bashls = {},
         cssls = {},
         docker_compose_language_service = {},
         dockerls = {},
         html = {},
-        htmx = {},
+        emmet_ls = {},
         hyprls = {},
         marksman = {},
         pyright = {},
@@ -191,9 +196,17 @@ return {
         stylelint = { filetypes = { 'sass' } },
         tailwindcss = {},
         taplo = {},
-        templ = {},
         terraformls = {},
-        ts_ls = {},
+
+        volar = {},
+        ts_ls = {
+          filetypes = { 'javascript', 'typescript', 'vue' },
+          init_options = {
+            plugins = {
+              { name = '@vue/typescript-plugin', location = vue_language_server_path, languages = { 'javascript', 'typescript', 'vue' } },
+            },
+          },
+        },
 
         gopls = {
           settings = {
