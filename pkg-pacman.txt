@@ -29,10 +29,10 @@ eza
 fastfetch
 fd
 firefox
-firewalld
 flatpak
 freerdp
 fuse2
+fuse-overlayfs
 fzf
 gcc
 git

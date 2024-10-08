@@ -57,11 +57,8 @@ setup_services() {
     "avahi-daemon"
     "bluetooth"
     "docker"
-    "cups.service"
-    "firewalld"
     "fstrim.timer"
     "NetworkManager"
-    "reflector.timer"
     "sshd"
   )
 
@@ -77,6 +74,10 @@ init_yay
 install_yay_packages
 set_default_shell
 configure_time
+
+# add user to docker group (docker without sudo)
+sudo usermod -aG docker $USER
+
 setup_services
 
 # fix btop intel graphics issue
