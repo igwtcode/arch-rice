@@ -188,7 +188,6 @@ return {
         docker_compose_language_service = {},
         dockerls = {},
         html = {},
-        emmet_ls = {},
         hyprls = {},
         marksman = {},
         pyright = {},
@@ -208,6 +207,9 @@ return {
           },
         },
 
+        golangci_lint_ls = {
+          filetypes = { 'go', 'gomod' },
+        },
         gopls = {
           settings = {
             gopls = {
@@ -300,9 +302,9 @@ return {
         'cfn-lint',
         'hadolint',
         'tflint',
-        'eslint',
+        -- 'eslint',
+        -- 'eslint_d',
         'flake8',
-        'golangci-lint',
         'jsonlint',
         'isort',
         'black',
