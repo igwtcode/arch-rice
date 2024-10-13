@@ -5,4 +5,5 @@ aws-sam-cli
 grimblast
 nvm
 smile
+ticktick
 visual-studio-code-bin
