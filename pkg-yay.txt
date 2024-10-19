@@ -1,9 +1,0 @@
-1password
-1password-cli
-aws-cli-v2
-aws-sam-cli
-grimblast
-nvm
-smile
-ticktick
-visual-studio-code-bin
