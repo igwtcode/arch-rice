@@ -49,6 +49,7 @@ gnome-calculator
 go
 grim
 grimblast
+grub-btrfs
 gtk4
 gvfs
 gvfs-smb
@@ -126,6 +127,7 @@ terminus-font
 terraform
 thunderbird
 ticktick
+timeshift-autosnap
 tldr
 tokei
 ttf-cascadia-code-nerd

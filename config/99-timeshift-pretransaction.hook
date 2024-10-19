@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Create a Btrfs snapshot before the pacman operation
+When = PreTransaction
+Exec = /usr/bin/timeshift --create --comments "Pre-Transaction Snapshot" --tags D

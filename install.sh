@@ -15,8 +15,10 @@ PKG_FILE="pkg.txt"
 SERVICES=(
   "acpid"
   "bluetooth"
+  "cronie"
   "docker"
   "fstrim.timer"
+  "grub-btrfsd"
   "NetworkManager"
   "sshd"
   # "avahi-daemon"
@@ -122,3 +124,12 @@ bat cache --build &>/dev/null
 
 # Install Yazi flavor for Catppuccin Mocha theme
 ya pack -a yazi-rs/flavors:catppuccin-mocha &>/dev/null
+
+# Create the directory for pacman hooks if it doesn't already exist
+sudo mkdir -p /etc/pacman.d/hooks
+
+# Copy the Timeshift snapshot hook to create snapshots before pacman operations
+sudo cp "$CONF_DIR/99-timeshift-pretransaction.hook" /etc/pacman.d/hooks/99-timeshift-pretransaction.hook
+
+# Copy the grub-btrfs hook to add snapshots in systemd-boot menu after pacman operations
+sudo cp "$CONF_DIR/99-btrfs-systemd-boot.hook" /etc/pacman.d/hooks/99-btrfs-systemd-boot.hook

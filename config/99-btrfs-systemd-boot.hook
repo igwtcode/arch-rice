@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Add new Btrfs snapshots to systemd-boot after the pacman operation
+When = PostTransaction
+Exec = /usr/bin/grub-btrfs -r /boot
