@@ -22,13 +22,14 @@ SERVICES=(
 )
 
 # Configuration items to symlink in ~/.config
-dotconfig_items=(
+dotconfig_symlinks=(
   "alacritty"
   "bat"
   "btop"
   "Code"
   "code-flags.conf"
   "dunst"
+  "gitconfig"
   "hypr"
   "kitty"
   "lazygit"
@@ -42,8 +43,7 @@ dotconfig_items=(
 )
 
 # Home directory dotfiles to symlink
-home_items=(
-  ".gitconfig"
+home_symlinks=(
   ".bashrc"
   ".zshrc"
   ".vim"
@@ -56,6 +56,11 @@ mkdir -p "$DOT_CONF_DIR" "$TF_PLUGIN_CACHE_DIR" "$HOME_LOCAL_BIN"
 # Copy yay config if not exists
 if [ ! -d "$DOT_CONF_DIR/yay" ]; then
   cp -r "$CONF_DIR/yay" "$DOT_CONF_DIR/yay"
+fi
+
+# Copy base .gitconfig if not exists
+if [ ! -f "$HOME/.gitconfig" ]; then
+  cp "$CONF_DIR/.gitconfig" "$HOME/.gitconfig"
 fi
 
 # Initialize and update pacman keys, update system, clean cache
@@ -104,12 +109,12 @@ for item in "${SERVICES[@]}"; do
 done
 
 # Symlink configuration files into ~/.config
-for item in "${dotconfig_items[@]}"; do
+for item in "${dotconfig_symlinks[@]}"; do
   ln -sfn "$CONF_DIR/$item" "$DOT_CONF_DIR/$item"
 done
 
 # Symlink dotfiles into home directory
-for item in "${home_items[@]}"; do
+for item in "${home_symlinks[@]}"; do
   ln -sfn "$CONF_DIR/$item" "$HOME/$item"
 done
 
