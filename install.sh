@@ -4,7 +4,6 @@
 DIR=$(pwd)
 CONF_DIR="$DIR/config"
 DOT_CONF_DIR="$HOME/.config"
-WALLPAPER_DIR="$HOME/Pictures/wallpaper"
 TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 HOME_LOCAL_BIN="$HOME/.local/bin"
 TMUX_TPM_DIR="$DOT_CONF_DIR/tmux/plugins/tpm"
@@ -51,6 +50,14 @@ home_items=(
   ".vimrc"
 )
 
+# Create directories if they don't exist
+mkdir -p "$DOT_CONF_DIR" "$TF_PLUGIN_CACHE_DIR" "$HOME_LOCAL_BIN"
+
+# Copy yay config if not exists
+if [ ! -d "$DOT_CONF_DIR/yay" ]; then
+  cp -r "$CONF_DIR/yay" "$DOT_CONF_DIR/yay"
+fi
+
 # Initialize and update pacman keys, update system, clean cache
 sudo pacman-key --init
 sudo pacman-key --populate archlinux
@@ -95,9 +102,6 @@ sudo usermod -aG docker "$USER"
 for item in "${SERVICES[@]}"; do
   sudo systemctl enable --now "$item"
 done
-
-# Create necessary directories if they don't exist
-mkdir -p "$DOT_CONF_DIR" "$WALLPAPER_DIR" "$TF_PLUGIN_CACHE_DIR" "$HOME_LOCAL_BIN"
 
 # Symlink configuration files into ~/.config
 for item in "${dotconfig_items[@]}"; do
