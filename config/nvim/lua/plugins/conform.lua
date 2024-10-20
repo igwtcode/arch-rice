@@ -60,7 +60,7 @@ return {
           terraform = { 'terraform_fmt' },
           tf = { 'terraform_fmt' },
           ['terraform-vars'] = { 'terraform_fmt' },
-          sh = { 'beautysh', 'shfmt' },
+          sh = { 'shfmt', 'beautysh' },
           bash = { 'beautysh', 'shfmt' },
           zsh = { 'beautysh' },
           yaml = { 'prettier' },
