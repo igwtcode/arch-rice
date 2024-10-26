@@ -5,7 +5,6 @@ DIR=$(pwd)
 CONF_DIR="$DIR/config"
 DOT_CONF_DIR="$HOME/.config"
 TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
-HOME_LOCAL_BIN="$HOME/.local/bin"
 TMUX_TPM_DIR="$DOT_CONF_DIR/tmux/plugins/tpm"
 YAY_DIR="/opt/yay"
 PKG_FILE="pkg.txt"
@@ -50,8 +49,12 @@ home_symlinks=(
   ".vimrc"
 )
 
+# Set timezone and sync hardware clock
+sudo ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+sudo hwclock --systohc
+
 # Create directories if they don't exist
-mkdir -p "$DOT_CONF_DIR" "$TF_PLUGIN_CACHE_DIR" "$HOME_LOCAL_BIN"
+mkdir -p "$DOT_CONF_DIR" "$TF_PLUGIN_CACHE_DIR"
 
 # Copy yay config if not exists
 if [ ! -d "$DOT_CONF_DIR/yay" ]; then
@@ -60,6 +63,7 @@ fi
 
 # Copy base .gitconfig if not exists
 if [ ! -f "$HOME/.gitconfig" ]; then
+  ln -sfn "$CONF_DIR/gitconfig" "$DOT_CONF_DIR/gitconfig"
   cp "$CONF_DIR/.gitconfig" "$HOME/.gitconfig"
 fi
 
@@ -87,10 +91,6 @@ fi
 
 # Install packages from list, only those that are not already installed
 yay -S --needed --noconfirm - <"$PKG_FILE"
-
-# Set timezone and sync hardware clock
-sudo ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
-sudo hwclock --systohc
 
 # Set zsh as default shell if not already set
 if [ "$SHELL" != "$(which zsh)" ]; then
