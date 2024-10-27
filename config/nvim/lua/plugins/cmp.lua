@@ -105,9 +105,9 @@ return {
         sources = {
           { name = 'nvim_lsp' },
           { name = 'copilot' },
-          { name = 'path', max_item_count = 3 }, -- file system paths
-          { name = 'buffer', max_item_count = 5 }, -- text within current buffer
-          { name = 'luasnip', max_item_count = 3 }, -- snippets
+          { name = 'path', max_item_count = 7 }, -- file system paths
+          { name = 'buffer', max_item_count = 7 }, -- text within current buffer
+          { name = 'luasnip', max_item_count = 7 }, -- snippets
           {
             name = 'lazydev',
             -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
