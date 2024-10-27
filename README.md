@@ -12,10 +12,10 @@ ParallelDownloads = 15
 ILoveCandy
 ```
 
-## Packages
+## Usage
 
-Install `pacman` and `yay` packages:
+Install and configure packages:
 
 ```bash
-./pkg.sh
+./install.sh
 ```
