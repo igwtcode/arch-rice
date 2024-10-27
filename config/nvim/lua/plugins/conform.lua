@@ -42,7 +42,8 @@ return {
           beautysh = {
             prepend_args = { '-i', '2', '--force-function-style', 'paronly', '$FILENAME' },
           },
-          prettier = {
+          custom_prettier = {
+            command = 'prettier',
             stdin = true,
             args = {
               '--stdin-filepath',
@@ -61,13 +62,13 @@ return {
           tf = { 'terraform_fmt' },
           ['terraform-vars'] = { 'terraform_fmt' },
           sh = { 'shfmt', 'beautysh' },
-          bash = { 'beautysh', 'shfmt' },
+          bash = { 'shfmt', 'beautysh' },
           zsh = { 'beautysh' },
-          yaml = { 'prettier' },
-          ['yaml.cfn'] = { 'prettier' },
-          ['yaml.sam'] = { 'prettier' },
-          json = { 'prettier' },
-          jsonc = { 'prettier' },
+          yaml = { 'custom_prettier' },
+          ['yaml.cfn'] = { 'custom_prettier' },
+          ['yaml.sam'] = { 'custom_prettier' },
+          json = { 'custom_prettier' },
+          jsonc = { 'custom_prettier' },
           markdown = { 'prettier' },
           ['markdown.mdx'] = { 'prettier' },
           javascript = { 'prettier' },
