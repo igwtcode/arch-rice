@@ -41,12 +41,12 @@ return {
         'markdown_inline',
         'properties',
         'python',
-        'query',
+        -- 'query',
         'regex',
         'rst',
         'sql',
         'ssh_config',
-        'templ',
+        -- 'templ',
         'terraform',
         'tmux',
         'toml',
@@ -65,6 +65,7 @@ return {
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { 'ruby' },
+        disable = { 'query' },
       },
       indent = { enable = true, disable = { 'ruby' } },
       autopairs = {

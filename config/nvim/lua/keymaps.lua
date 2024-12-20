@@ -8,6 +8,9 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Open Oil (file explorer)
 vim.keymap.set('n', '<leader>e', '<cmd>Oil --float<CR>', { desc = 'Explorer' })
 
+-- zen mode
+vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<CR>', { desc = 'Toggle [Z]en mode' })
+
 -- vim.keymap.set('n', '<leader>r', '<cmd>RotateWindows<cr>', { desc = 'Rotate Windows' })
 vim.keymap.set('n', '<leader>m', '<cmd>MaximizerToggle<CR>', { desc = 'Maximize/minimize a split' })
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<CR>', { desc = 'Lazygit' })

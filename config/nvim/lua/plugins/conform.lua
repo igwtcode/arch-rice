@@ -73,6 +73,7 @@ return {
           ['markdown.mdx'] = { 'prettier' },
           javascript = { 'prettier' },
           typescript = { 'prettier' },
+          vue = { 'prettier' },
           handlebars = { 'prettier' },
           html = { 'prettier' },
           css = { 'prettier' },
